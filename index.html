@@ -1,0 +1,10 @@
+<html>
+<body>
+<input type=text name=keyword value=""  >
+<input type=button name=refreshbut value="Refresh" onClick="(function(){
+  alert(document.keyword.value);
+    this.src = this.src+ "?codeword="+document.keyword.value;
+    return false;
+})();return false;">
+</body>
+</html>
