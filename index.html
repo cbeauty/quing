@@ -10,11 +10,37 @@
     return false;
         
       }
+      
+      function WriteCookie()
+{
+   emailValue = escape(document.form.zemail.value) + ";";
+   
+
+   document.cookie="zemail=" + emailValue;
+   
+}
+      
+      function ReadCookie(){
+    var key, value, i;
+        alert( document.cookie)
+    var cookieArray  = document.cookie.split(';');
+
+    for (i = 0; i < cookieArray.length; i++){
+        key = cookieArray[i].substr(0, cookieArray[i].indexOf("="));
+        value = cookieArray[i].substr(cookieArray[i].indexOf("=")+1);
+
+        if (key == 'zemail'){
+            alert('Email is ' + value);
+        }
+
+    }
+}
     </script>
   </head>
-<body>
-<input type=text id=keycword name=keycword value=""  >
-<input type=button name=refreshbut value="Refresh" onClick="refreshpage();" >
- 
+<body onload=ReadCookie()>
+  <form>
+<input type=text id=zemail name=zemail value=""  >
+<input type=button name=refreshbut value="Update Cookie" onClick="WriteCookie();" >
+  </form>
 </body>
 </html>
