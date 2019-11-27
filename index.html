@@ -13,7 +13,9 @@
       
       function WriteCookie()
 {
-   emailValue = escape(document.form.zemail.value) + ";";
+  
+  var mycontrol = document.getElementById("keycword");
+   emailValue = escape(mycontrol.value) + ";";
    
 
    document.cookie="zemail=" + emailValue;
