@@ -24,7 +24,7 @@
       
       function ReadCookie(){
     var key, value, i;
-        alert( document.cookie)
+        
     var cookieArray  = document.cookie.split(';');
 
     for (i = 0; i < cookieArray.length; i++){
@@ -32,7 +32,9 @@
         value = cookieArray[i].substr(cookieArray[i].indexOf("=")+1);
 
         if (key == 'zemail'){
-            alert('Email is ' + value);
+            
+          var mycontrol = document.getElementById("zemail");
+          mycontrol.value = value;
         }
 
     }
